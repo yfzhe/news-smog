@@ -10,18 +10,14 @@ body {
     counter-reset: section;
 }
 
-header, article {
-    float: left;
-    width: 100vw;
-    min-height: 100vh;
-}
-
 header {
     box-sizing: border-box;
+    height: 100vh;
     padding: 1em calc(50% - 500px) 6em;
-    background-image: url("/assets/images/city-under-smog.jpg");
-    background-size: cover;
+/*    background-color: #856977;*/
+    background-image: url("../assets/images/city-under-smog.jpg");
     background-repeat: no-repeat;
+    background-size: cover;
     font-family: serif;
 }
 
@@ -79,6 +75,7 @@ article h1 {
 }
 
 article h1::before {
+    content: counter(section);
     content: counter(section, cjk-ideographic);
     display: block;
     font-size: 0.7em;
