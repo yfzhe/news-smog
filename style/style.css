@@ -10,7 +10,7 @@ body {
     counter-reset: section;
 }
 
-header {
+header{
     box-sizing: border-box;
     height: 100vh;
     padding: 1em calc(50% - 500px) 6em;
@@ -41,8 +41,7 @@ header p {
 article {
     position: relative;
     box-sizing: border-box;
-    padding: 2.22222222rem 3.33333333rem 1.22222222rem;
-    padding-left: 3.3333333rem;
+    padding: 4.44444444rem 3.33333333rem 2.22222223rem;
     min-height: 100vh;
     overflow: auto;
     counter-increment: section;
@@ -56,8 +55,8 @@ article:nth-child(2n+1) {
     background: linear-gradient(to right, rgba(240,222,187,.6) 37%, transparent 0);
 }
 
-article h1, article h2, article > p, article .conversation,
-article ol, article .timeline  {
+article h1, article h2, article > h3, article > p,
+.conversation, article blockquote, article > ol, article .timeline  {
     box-sizing: border-box;
     width: 62%;
     margin-left: 38%;
@@ -86,7 +85,7 @@ article h1::before {
 article h2 {
     font-family: serif;
     min-width: 600px;
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     letter-spacing: 0.06em;
 }
 
@@ -98,9 +97,17 @@ article h2::before {
     border-left: 1em solid black;
 }
 
+article > h3 {
+    font-family: serif;
+    font-size: 1.2rem;
+    margin-top: 0.3rem;
+    margin-bottom: 0.3rem;
+}
+
 article > p {
     line-height: 1.8;
     text-indent: 2em;
+    font-size: 0.95rem;
 }
 
 article li {
@@ -108,25 +115,49 @@ article li {
     margin-bottom: 0.5rem;
 }
 
-dl.conversation {
+.conversation {
     border-left: 2px solid #888;
     padding: 0;
     padding-left: 1rem;
+    line-height: 2;
+    color: #444;
+    font-size: 0.88888889rem;
+}
+
+.conversation dt, dl.conversation dd {
+    display: inline;
+}
+
+.conversation dt {
+    width: 3em;
+}
+
+.conversation dd {
+    margin: 0;
+}
+
+.conversation dd::after {
+    content: "\A";
+    white-space: pre;
+}
+
+blockquote {
+    font-size: 0.88888889rem;
+    padding: 0.3rem 1.66666667rem;
     line-height: 1.65;
     color: #444;
 }
 
-dl.conversation dt, dl.conversation dd {
-    display: inline;
+blockquote p {
+    margin: 0.5rem 0;
+    text-indent: 2em;
 }
 
-dl.conversation dd {
-    margin: 0;
-}
-
-dl.conversation dd::after {
-    content: "\A";
-    white-space: pre;
+article > ol {
+    margin-top: 1.7em;
+    margin-bottom: 1.7em;
+    font-size: 0.95rem;
+    line-height: 1.5;
 }
 
 article aside {
@@ -138,23 +169,28 @@ article aside {
     clear: both;
 }
 
-article aside img {
+aside img {
     display: block;
     box-sizing: border-box;
     max-width: 100%;
-    max-height: 280px;
+    max-height: 250px;
     margin-top: 0;
     margin-bottom: 0.5rem;
 }
 
-article aside p, article .link {
+aside img.fullsize {
+    width: 100%;
+    max-height: none;
+}
+
+aside p, article .link {
     margin: 0.4rem 0;
     font-size: 0.88888889rem;
-    color: #666;
+    color: #444;
     line-height: 1.5;
 }
 
-article aside p {
+aside p {
     width: 100%;
     margin-bottom: 1.5rem;
 }
@@ -184,4 +220,77 @@ article aside:nth-last-child(1) {
     margin-bottom: 7rem;
 }
 
+/* timeline */
+.timeline {
+    box-sizing: border-box;
+    position: relative;
+    margin: 0 auto;
+}
 
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 0.3333333rem;
+    top: 0;
+    bottom: 0;
+    left: 2rem;
+    background-color: #626262;
+}
+
+.container {
+    padding: 0.55555556rem;
+    padding-left: 4rem;
+    padding-right: 1.38888889rem;
+    position: relative;
+    width: 80%;
+    left: 0;
+  }
+
+.container::before {
+    content: "";
+    position: absolute;
+    width: 1.11111111rem;
+    height: 1.11111111rem;
+    left: 15px;
+    right: -17px;
+    background-color: white;
+    border: 4px solid #FF9F55;
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.container::after {
+    left: 3.33333333rem;
+    border: medium solid white;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+}
+
+.content {
+    padding: 0.5rem 1rem;
+    position: relative;
+    border-radius: 6px;
+    font-size: 0.88888889rem;
+    line-height: 1.7;
+}
+
+.content h3, .content p {
+    margin: 0.5rem 0.3rem;
+}
+
+footer {
+    box-sizing: border-box;
+    height: 100vh;
+    padding: 3rem calc(50% - 500px) 6rem;
+    background-color: #6d797c;
+    background-image: url(../assets/images/city-under-smog.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+footer video {
+    display: block;
+    width: 80%;
+    margin: 3rem auto 2rem;
+}
