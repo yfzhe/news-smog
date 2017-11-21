@@ -1,0 +1,187 @@
+
+
+html {
+    font-family: sans-serif;
+}
+
+body {
+    font-size: 18px;
+    margin: 0;
+    counter-reset: section;
+}
+
+header, article {
+    float: left;
+    width: 100vw;
+    min-height: 100vh;
+}
+
+header {
+    box-sizing: border-box;
+    padding: 1em calc(50% - 500px) 6em;
+    background-color: #6e5864;
+    background-image: url("/assets/images/city-under-smog.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: serif;
+}
+
+header h1 {
+    font-size: 5.5556rem;
+    margin: 1em auto 0.7em;
+    color: #fff;
+    letter-spacing: 0.1em;
+    text-align: center;
+    text-shadow: 0 1px 1px hsla(0, 0%, 100%, 0.8);
+}
+
+header p {
+    font-size: 1rem;
+    margin: 1em 7.5em;
+    text-indent: 2em;
+    line-height: 1.9;
+    color: #c9c9c9;
+}
+
+article {
+    position: relative;
+    box-sizing: border-box;
+    padding: 2.22222222rem 3.33333333rem 1.22222222rem;
+    padding-left: 3.3333333rem;
+    min-height: 100vh;
+    overflow: auto;
+    counter-increment: section;
+}
+
+article:nth-child(2n) {
+    background: linear-gradient(to left, rgba(240,222,187,.6) 63%, transparent 0);
+}
+
+article:nth-child(2n+1) {
+    background: linear-gradient(to right, rgba(240,222,187,.6) 37%, transparent 0);
+}
+
+article h1, article h2, article > p, article .conversation,
+article ol, article .timeline  {
+    box-sizing: border-box;
+    width: 62%;
+    margin-left: 38%;
+    margin-right: 0;
+}
+
+article h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1em;
+    min-width: 600px;
+    padding: 0;
+    font-family: serif;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+}
+
+article h1::before {
+    content: counter(section, cjk-ideographic);
+    display: block;
+    font-size: 0.7em;
+    font-weight: 100;
+    margin: 0.3em 0.1em 0.6em;
+}
+
+article h2 {
+    font-family: serif;
+    min-width: 600px;
+    font-size: 1.4rem;
+    letter-spacing: 0.06em;
+}
+
+article h2::before {
+    width: 0;
+    height: 0;
+    border-top: 1em solid transparent;
+    border-bottom: 1em solid transparent;
+    border-left: 1em solid black;
+}
+
+article > p {
+    line-height: 1.8;
+    text-indent: 2em;
+}
+
+
+dl.conversation {
+    border-left: 2px solid #888;
+    padding: 0;
+    padding-left: 1rem;
+    line-height: 1.65;
+    color: #444;
+}
+
+dl.conversation dt, dl.conversation dd {
+    display: inline;
+}
+
+dl.conversation dd {
+    margin: 0;
+}
+
+dl.conversation dd::after {
+    content: "\A";
+    white-space: pre;
+}
+
+article aside {
+    box-sizing: border-box;
+    width: 34%;
+    margin: 0;
+    padding-right: 1.66666667rem;
+    float: left;
+    clear: both;
+}
+
+article aside img {
+    display: block;
+    box-sizing: border-box;
+    max-width: 100%;
+    max-height: 280px;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+article aside p, article .link {
+    margin: 0.4rem 0;
+    font-size: 0.88888889rem;
+    color: #666;
+    line-height: 1.5;
+}
+
+article aside p {
+    width: 100%;
+    margin-bottom: 1.5rem;
+}
+
+article .link {
+    position: absolute;
+    width: 34%;
+    bottom: 2rem;
+    margin: 0;
+    padding-right: 1.66666667rem;
+    font-size: 0.88888889rem;
+    text-indent: 0;
+    word-wrap: break-word;
+}
+
+article > .link > a {
+    color: #551a8b;
+    text-decoration: none;
+}
+
+article > .link::before {
+    content: "相关链接：";
+    display: block;
+}
+
+article aside:nth-last-child(1) {
+    margin-bottom: 7rem;
+}
+
+
