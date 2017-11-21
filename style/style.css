@@ -19,7 +19,6 @@ header, article {
 header {
     box-sizing: border-box;
     padding: 1em calc(50% - 500px) 6em;
-    background-color: #6e5864;
     background-image: url("/assets/images/city-under-smog.jpg");
     background-size: cover;
     background-repeat: no-repeat;
