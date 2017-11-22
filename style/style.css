@@ -30,37 +30,46 @@ header h1 {
     text-shadow: 0 1px 1px hsla(0, 0%, 100%, 0.8);
 }
 
-header p {
-    font-size: 1rem;
-    margin: 1em 7.5em;
-    text-indent: 2em;
-    line-height: 1.9;
-    color: #c9c9c9;
+header video {
+    display: block;
+    width: 70%;
+    margin: 3rem auto 2rem;
+}
+
+section {
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 100vh;
+    overflow: auto;
+    display: flex;
+    flex-direction: row-reverse;
 }
 
 article {
-    position: relative;
     box-sizing: border-box;
-    padding: 4.44444444rem 3.33333333rem 2.22222223rem;
-    min-height: 100vh;
-    overflow: auto;
+    position: relative;
+    padding: 1.66666667rem 3.33333333rem;
+    width: calc(100vw - 480px);
     counter-increment: section;
 }
 
-article:nth-child(2n) {
-    background: linear-gradient(to left, rgba(240,222,187,.6) 63%, transparent 0);
-}
-
-article:nth-child(2n+1) {
-    background: linear-gradient(to right, rgba(240,222,187,.6) 37%, transparent 0);
-}
-
-article h1, article h2, article > h3, article > p,
-.conversation, article blockquote, article > ol, article .timeline  {
+aside {
     box-sizing: border-box;
-    width: 62%;
-    margin-left: 38%;
-    margin-right: 0;
+    position: relative;
+    width: 480px;
+    left: 0;
+    top: 0;
+    margin: 0;
+    height: inherit;
+    padding: 8rem 3.22222223rem 2rem;
+}
+
+section:nth-child(2n+1) > article {
+    background-color: rgba(240,222,187,.6);
+}
+
+section:nth-child(2n) > aside {
+    background-color: rgba(240,222,187,.6);
 }
 
 article h1 {
@@ -108,6 +117,27 @@ article > p {
     line-height: 1.8;
     text-indent: 2em;
     font-size: 0.95rem;
+}
+
+article img {
+    display: block;
+    box-sizing: border-box;
+    max-width: 100%;
+    max-height: 260px;
+    margin-top: 0 1rem 5.77777778rem 0.5rem;
+}
+
+.remark {
+    margin: 0.3rem 0 1.2222223rem;
+    color: #666;
+    font-size: 0.88888889rem;
+    text-indent: 0;
+    width: 60%;
+}
+
+.img-large {
+    width: 60%;
+    max-height: none;
 }
 
 article li {
@@ -169,51 +199,38 @@ article aside {
     clear: both;
 }
 
-aside img {
-    display: block;
-    box-sizing: border-box;
-    max-width: 100%;
-    max-height: 250px;
-    margin-top: 0;
-    margin-bottom: 0.5rem;
+aside p {
+    font-size: 1.35rem;
+    color: #444;
 }
 
-aside img.fullsize {
+aside a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.link {
+    position: absolute;
     width: 100%;
-    max-height: none;
-}
-
-aside p, article .link {
+    bottom: 2rem;
     margin: 0.4rem 0;
+    padding-right: 1.66666667rem;
     font-size: 0.88888889rem;
     color: #444;
     line-height: 1.5;
-}
-
-aside p {
-    width: 100%;
-    margin-bottom: 1.5rem;
-}
-
-article .link {
-    position: absolute;
-    width: 34%;
-    bottom: 2rem;
-    margin: 0;
-    padding-right: 1.66666667rem;
-    font-size: 0.88888889rem;
     text-indent: 0;
     word-wrap: break-word;
 }
 
-article > .link > a {
-    color: #551a8b;
-    text-decoration: none;
-}
-
-article > .link::before {
+.link::before {
     content: "相关链接：";
     display: block;
+}
+
+.link a {
+    display: block;
+    color: #551a8b;
+    text-decoration: none;
 }
 
 article aside:nth-last-child(1) {
@@ -279,18 +296,5 @@ article aside:nth-last-child(1) {
     margin: 0.5rem 0.3rem;
 }
 
-footer {
-    box-sizing: border-box;
-    height: 100vh;
-    padding: 3rem calc(50% - 500px) 6rem;
-    background-color: #6d797c;
-    background-image: url(../assets/images/city-under-smog.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-}
 
-footer video {
-    display: block;
-    width: 80%;
-    margin: 3rem auto 2rem;
-}
+
