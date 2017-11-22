@@ -61,7 +61,7 @@ aside {
     top: 0;
     margin: 0;
     height: inherit;
-    padding: 8rem 3.22222223rem 2rem;
+    padding: 7rem 3.22222223rem 2rem;
 }
 
 section:nth-child(2n+1) > article {
@@ -213,7 +213,17 @@ aside a {
 aside img {
     display: block;
     max-height: 180px;
-    margin: 0.4rem 0;
+    margin: 0.6rem 0;
+}
+
+aside small {
+    display: none;
+}
+
+.img-large-side {
+    width: 80%;
+    max-height: none;
+    margin: 0.5rem 0 2.5rem;
 }
 
 .link {
