@@ -1,5 +1,3 @@
-
-
 html {
     font-family: sans-serif;
 }
@@ -34,6 +32,15 @@ header video {
     display: block;
     width: 70%;
     margin: 3rem auto 2rem;
+    background-color: #9cabad;
+    animation: fadeIn 1s ease-in;
+    transition-delay: 2s;
+}
+
+@keyframes fadeIn {
+    0% {opacity: 0;}
+    50% {opacity: 0;}
+    100% {opacity: 1;}
 }
 
 section {
@@ -210,6 +217,18 @@ aside a {
     text-decoration: none;
 }
 
+aside a::before {
+    content: "";
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-top: 0.3rem solid transparent;
+    border-bottom: 0.3rem solid transparent;
+    border-left: 0.6rem solid black;
+    margin: 0 0.3rem 0.2rem 0;
+    z-index: 1;
+}
+
 aside img {
     display: block;
     max-height: 180px;
@@ -246,8 +265,13 @@ aside small {
 
 .link a {
     display: block;
+    position: relative;
     color: #551a8b;
     text-decoration: none;
+}
+
+.link a::before {
+    display: none;
 }
 
 article aside:nth-last-child(1) {
@@ -273,7 +297,7 @@ article aside:nth-last-child(1) {
 
 .container {
     padding: 0.55555556rem;
-    padding-left: 4rem;
+    padding-left: 3rem;
     padding-right: 1.38888889rem;
     position: relative;
     width: 80%;
@@ -285,7 +309,7 @@ article aside:nth-last-child(1) {
     position: absolute;
     width: 1.11111111rem;
     height: 1.11111111rem;
-    left: 15px;
+    left: 22px;
     right: -17px;
     background-color: white;
     border: 4px solid #FF9F55;
@@ -309,9 +333,9 @@ article aside:nth-last-child(1) {
     line-height: 1.7;
 }
 
-.content h3, .content p {
+.content h3 {
+    margin: 0 0.3rem;
+}
+.content p {
     margin: 0.5rem 0.3rem;
 }
-
-
-
