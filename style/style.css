@@ -1,5 +1,5 @@
 html {
-    font-family: sans-serif;
+    font-family: "Microsoft Yahei", sans-serif;
 }
 
 body {
@@ -33,14 +33,6 @@ header video {
     width: 70%;
     margin: 3rem auto 2rem;
     background-color: #9cabad;
-    animation: fadeIn 1s ease-in;
-    transition-delay: 2s;
-}
-
-@keyframes fadeIn {
-    0% {opacity: 0;}
-    50% {opacity: 0;}
-    100% {opacity: 1;}
 }
 
 section {
@@ -56,14 +48,14 @@ article {
     box-sizing: border-box;
     position: relative;
     padding: 1.66666667rem 3.33333333rem;
-    width: calc(100vw - 480px);
+    width: 68%;
     counter-increment: section;
 }
 
 aside {
     box-sizing: border-box;
     position: relative;
-    width: 480px;
+    width: 32%;
     left: 0;
     top: 0;
     margin: 0;
@@ -72,11 +64,11 @@ aside {
 }
 
 section:nth-child(2n+1) > article {
-    background-color: rgba(240,222,187,.6);
+    background-color: rgba(177,182,178,0.4);/*rgba(240,222,187,.6);*/
 }
 
 section:nth-child(2n) > aside {
-    background-color: rgba(240,222,187,.6);
+    background-color: rgba(177,182,178,0.4);/*rgba(240,222,187,.6);*/
 }
 
 article h1 {
@@ -197,15 +189,6 @@ article > ol {
     line-height: 1.5;
 }
 
-article aside {
-    box-sizing: border-box;
-    width: 34%;
-    margin: 0;
-    padding-right: 1.66666667rem;
-    float: left;
-    clear: both;
-}
-
 aside p {
     font-size: 1.15rem;
     color: #444;
@@ -247,14 +230,15 @@ aside small {
 
 .link {
     position: absolute;
-    width: 100%;
+    width: 65%;
     bottom: 2rem;
     margin: 0.4rem 0;
+    padding-left: 2rem;
     padding-right: 1.66666667rem;
     font-size: 0.88888889rem;
     color: #444;
-    line-height: 1.5;
-    text-indent: 0;
+    line-height: 1.45;
+    text-indent: -2rem;
     word-wrap: break-word;
 }
 
@@ -267,6 +251,7 @@ aside small {
     display: block;
     position: relative;
     color: #551a8b;
+    margin: 0.5rem 0;
     text-decoration: none;
 }
 
